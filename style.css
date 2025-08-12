@@ -1,0 +1,182 @@
+:root {
+  --primary: #00f2fe;
+  --secondary: #4facfe;
+  --error-color: #ff4b5c;
+  --text-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animated background shapes */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.6;
+  animation: float 8s infinite ease-in-out;
+}
+
+.shape1 {
+  background: var(--primary);
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+
+.shape2 {
+  background: var(--secondary);
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(30px, 40px); }
+}
+
+/* Glassmorphism container */
+.container {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+label {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-top: 10px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: var(--text-color);
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Buttons with glow effect */
+.glow-btn, .fun-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-btn:hover, .fun-btn:hover {
+  transform: scale(1.05);
+}
+
+.glow-btn::after, .fun-btn::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: 0;
+  transition: width 0.4s ease;
+}
+
+.glow-btn:hover::after, .fun-btn:hover::after {
+  width: 100%;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Success card styling */
+.student-info {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+.student-info p {
+  margin-bottom: 8px;
+}
+
+.success-container h2 {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+}
