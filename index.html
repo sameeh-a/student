@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animated background shapes -->
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+
+  <!-- Registration Form -->
+  <div class="container" id="formContainer">
+    <h2>Student Registration</h2>
+    <form id="regForm">
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label>Email:</label>
+      <input type="text" id="email" placeholder="Enter your email">
+
+      <label>Department:</label>
+      <select id="department">
+        <option value="">Select Department</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+      </select>
+
+      <label>Year:</label>
+      <select id="year">
+        <option value="">Select Year</option>
+        <option value="1st">1st Year</option>
+        <option value="2nd">2nd Year</option>
+        <option value="3rd">3rd Year</option>
+        <option value="4th">4th Year</option>
+      </select>
+
+      <label>Project Title:</label>
+      <input type="text" id="project" placeholder="Enter project title">
+
+      <p id="errorMsg" class="error"></p>
+
+      <button type="button" id="registerBtn" class="glow-btn">Register</button>
+    </form>
+  </div>
+
+  <!-- Success Display -->
+  <div class="container success-container" id="successContainer" style="display:none;">
+    <h2>🎓 Registration Successful</h2>
+    <div class="student-info">
+      <p><strong>Name:</strong> <span id="displayName"></span></p>
+      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+      <p><strong>Department:</strong> <span id="displayDept"></span></p>
+      <p><strong>Year:</strong> <span id="displayYear"></span></p>
+      <p><strong>Project Title:</strong> <span id="displayProject"></span></p>
+    </div>
+    <button id="newRegBtn" class="fun-btn">Register Another Student</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
